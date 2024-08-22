@@ -288,9 +288,9 @@ public function panel(Panel $panel): Panel
 }
 ```
 
-### Setting the authentication guard
+### Setting a custom authentication guard
 
-To set the authentication guard that Filament uses, you can pass in the guard name to the `authGuard()` [configuration](configuration) method:
+To set a custom authentication guard in Filament, you can pass in the guard name to the `authGuard()` [configuration](configuration) method:
 
 ```php
 use Filament\Panel;
@@ -299,9 +299,11 @@ public function panel(Panel $panel): Panel
 {
     return $panel
         // ...
-        ->authGuard('web');
+        ->authGuard('<GUARD_NAME>'); // e.g. 'admin' 
 }
 ```
+
+Remember to set up the guard in your config/auth.php file.
 
 ### Setting the password broker
 
